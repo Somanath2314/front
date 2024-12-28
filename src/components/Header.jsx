@@ -18,24 +18,34 @@ const Header = () => {
             <div className="flex items-center">
               <div className="sm:hidden">
                 <div className="dropdown">
-                  <div tabIndex={0} role="button" className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-transform hover:scale-95">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 6h16M4 12h8m-8 6h16"
-                      />
-                    </svg>
+                  <div tabIndex={0} role="button" className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <Menu className="h-6 w-6" />
                   </div>
-                  <ul tabIndex={0} className="dropdown-content menu bg-gray-800 rounded-lg shadow-lg mt-2 py-2 w-48">
-                    {/* ... dropdown items remain the same ... */}
+                  <ul tabIndex={0} className="dropdown-content z-50 menu p-2 bg-gray-900 rounded-lg shadow-lg mt-2 w-56 border border-gray-700">
+                    <li>
+                      <Link to="/" className="text-gray-300 hover:text-white hover:bg-gray-800 py-2 px-4 rounded-md">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/docs" className="text-gray-300 hover:text-white hover:bg-gray-800 py-2 px-4 rounded-md">
+                        Docs
+                      </Link>
+                    </li>
+                    {isAuth && (
+                      <li>
+                        <Link to="/api-endpoints" className="text-gray-300 hover:text-white hover:bg-gray-800 py-2 px-4 rounded-md">
+                          API Endpoints
+                        </Link>
+                      </li>
+                    )}
+                    {role === 'admin' && (
+                      <li>
+                        <Link to="/admin-section" className="text-gray-300 hover:text-white hover:bg-gray-800 py-2 px-4 rounded-md">
+                          Admin Section
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                 </div>
               </div>
