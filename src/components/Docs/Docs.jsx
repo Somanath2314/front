@@ -4,7 +4,7 @@ import { Copy, CheckCircle2, Code2, Book, AlertTriangle, Grid, Info } from 'luci
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-const ApiDocs = () => {
+export default function ApiDocs(){
   const [copiedText, setCopiedText] = useState('');
   const [activeTab, setActiveTab] = useState('getting-started');
 
@@ -263,5 +263,4 @@ const ApiDocs = () => {
     </div>
   );
 };
-
-export default ApiDocs;
+ 
