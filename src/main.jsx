@@ -8,7 +8,6 @@ import AdminSection from './components/AdminSection/AdminSection.jsx';
 import Register from './components/User/Register.jsx';
 import Login from './components/User/Login.jsx';
 import Layout from './Layout.jsx'; 
-import Docs from './components/Docs/docs.jsx';
 import Logout from './components/User/Logout.jsx'
 import { Provider, useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -17,6 +16,7 @@ import { store } from './app/store.js';
 import { addEmail } from './app/Slice/userSlice.js';
 import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
+import { Docs } from './components/Docs/Docs.jsx';
 import './index.css';
 
 const baseurl = import.meta.env.VITE_BASE_URL
